@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
-  title: 'Civic Pass documentation',
+  title: 'Civic documentation',
   tagline: 'Dinosaurs are cool',
   url: 'https://s4nt14go.github.io',
   baseUrl: '/docusaurus/',
@@ -24,7 +24,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/s4nt14go/docusaurus/edit/main/',
-          routeBasePath: '/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -37,7 +36,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Civic Pass documentation',
+        title: 'Civic documentation',
         logo: {
           alt: 'My Site Logo',
           src: 'img/civic.png',

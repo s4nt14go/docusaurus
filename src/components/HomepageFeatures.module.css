@@ -9,3 +9,12 @@
   height: 200px;
   width: 200px;
 }
+
+.justify {
+  justify-content: center;
+}
+
+a, a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
