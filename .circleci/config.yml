@@ -28,8 +28,7 @@ commands:
             git config --global user.email "santiagopergamo@gmail.com"
             git config --global user.name "s4nt14go"
             echo "machine github.com login s4nt14go password $GH_TOKEN" > ~/.netrc
-            GIT_USER=s4nt14go
-            USE_SSH=true npm run deploy
+            GIT_USER=s4nt14go USE_SSH=true npm run deploy
 
 jobs:
 
