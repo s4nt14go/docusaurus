@@ -1,0 +1,47 @@
+version: 2.1
+
+defaults:
+  - &on-main
+    filters:
+      branches:
+        only:
+          - main
+
+executors:
+  default:
+    docker:
+      - image: cimg/node:14.16
+
+commands:
+  deploy-doc:
+    steps:
+      - checkout:
+          path: ~/project
+      - run:
+          name: Yarn install
+          command: |
+            yarn install
+      - run:
+          name: Deploy Docusaurus
+          command: |
+            cd ~/project
+            git config --global user.email "santiagopergamo@gmail.com"
+            git config --global user.name "s4nt14go"
+            echo "machine github.com login s4nt14go password $GH_TOKEN" > ~/.netrc
+            USE_SSH=true npm run deploy
+
+jobs:
+
+  deploy-doc:
+    executor: default
+    working_directory: ~/project
+    steps:
+      - deploy-doc
+
+workflows:
+
+  main:
+    jobs:
+
+      - deploy-doc:
+          <<: *on-main
